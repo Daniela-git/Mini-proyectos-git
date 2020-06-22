@@ -8,12 +8,19 @@ entrada.addEventListener("input", (e) => {
 	if (e.data !== 0 || e.data !== 1) {
 		console.log("solo 0 y 1");
 		// mensaje()
-	}
+    }
+    if (entrada.value.length > 8) {
+        console.log('solo 8 digitos')
+    }
 });
 
 btnEnviar.addEventListener("click", (e) => {
-    e.preventDefault();
-    
+	e.preventDefault();
+    const numero = entrada.value;
+    if (typeof(numero) === 'string'){
+        console.log("holi");
+        //mensaje()
+    }
 });
 
 // funciones
