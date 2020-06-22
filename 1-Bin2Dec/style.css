@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap');
+:root{
+    --backColor: #273c75;
+    --mensaje: #ff6b6b;
+    --resultado: #1dd1a1;
+    --titulo: #feca57;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--backColor);
+}
+.container{
+    width: 50%;
+    margin:auto;
+    display: grid;
+    place-items:center;
+
+    
+}
+
+h1{
+    margin-top: 3em;
+    text-transform: uppercase;
+    font-size: 3em;
+    color: var(--titulo);
+}
+.mensajes{
+    font-size: 1.5em;
+    color: var(--mensaje);
+}
+
+#entrada{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 4px;
+    height: 3em;
+    width: 40%;
+    margin-top: 2em;
+    color: var(--titulo);
+    padding: 1em;
+
+}
+
+#entrada:focus{
+    background-color: white;
+    color: black;
+}
+
+.btn-enviar{
+    text-transform: capitalize;
+    background-color: transparent;
+    border: 2px solid white;
+    width: 6em;
+    height: 2.5em;
+    margin-top: 15px;
+    border-radius: 2px;
+    color: var(--titulo);
+    cursor: pointer;
+}
+.btn-enviar:hover{
+    color:black;
+    background-color: white;
+}
+.resultado{
+    font-size: 1.5em;
+    color: var(--resultado);
+    margin-top: 2rem;
+}
