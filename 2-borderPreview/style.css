@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    text-align: center;
+    place-items: center;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 2em;
+}
+
+.caja{
+    width: 12.5em;
+    height: 12.5em;
+    background-color: black;
+}
