@@ -1,28 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+:root {
+	--fondo: #f1f2f6;
+	--titulo: #1e90ff;
+	--caja: #fdcb6e;
+	--bordeCaja: #636e72;
 }
 
-body{
-    font-family: 'Ubuntu', sans-serif;
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
-.container{
-    width: 50%;
-    margin: auto;
-    display: grid;
-    text-align: center;
-    place-items: center;
-    /* grid-template-columns: 1fr 1fr; */
-    gap: 2em;
+body {
+	font-family: "Ubuntu", sans-serif;
+	background-color: var(--fondo);
 }
 
-.caja{
-    width: 12.5em;
-    height: 12.5em;
-    background-color: black;
-    
+.container {
+	width: 50%;
+	margin: auto;
+	display: grid;
+	text-align: center;
+	place-items: center;
+	/* grid-template-columns: 1fr 1fr; */
+	gap: 2em;
+}
+
+.caja {
+	width: 12.5em;
+	height: 12.5em;
+    background-color: var(--caja);
+    border: 2px solid var(--bordeCaja);
+}
+
+.valores {
+	width: 12.5em;
+	height: 12.5em;
+	/* background-color: var(--caja); */
+	display: grid;
+	text-align: left;
+}
+.left-top,
+.left-bottom,
+.right-top,
+.right-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+h1 {
+	margin-top: 1em;
+	font-size: 2.5em;
+	color: var(--titulo);
+}
+
+label {
+	text-transform: capitalize;
+}
+input {
+	width: 3em;
+	height: 2em;
+	border: 1px solid var(--bordeCaja);
+	border-radius: 2px;
+	background-color: transparent;
+}
+.btn-copy{
+    width: 8em;
+    height: 2em;
+    background-color: var(--caja);
+    border: 1px solid black;
+    cursor: pointer;
 }
