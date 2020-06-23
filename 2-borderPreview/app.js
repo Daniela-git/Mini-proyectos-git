@@ -28,33 +28,25 @@ function leerEntrada(e) {
 
 function copiar(e) {
 	e.preventDefault();
-	let html = ''
+	let html = "";
 	inputs.forEach((input) => {
-
-		const id = input.id
+		// miramos su id para saber a que parte de css corresponde, y poner el valor
+		const id = input.id;
 		if (id === "left-top") {
-			html += `border-top-left-radius:${input.value}px;\n`
-		}	
-		else if (id === "left-bottom") {
-			html += `border-bottom-left-radius:${input.value}px;\n`
+			html += `border-top-left-radius:${input.value}px;\n`;
+		} else if (id === "left-bottom") {
+			html += `border-bottom-left-radius:${input.value}px;\n`;
+		} else if (id === "right-top") {
+			html += `border-top-right-radius:${input.value}px;\n`;
+		} else if (id === "right-bottom") {
+			html += `border-bottom-right-radius:${input.value}px;\n`;
 		}
-		else if (id === "right-top") {
-			html += `border-top-right-radius:${input.value}px;\n`
-		}
-		else if (id === "right-bottom") {
-			html += `border-bottom-right-radius:${input.value}px;\n`
-		}
-
-
-
-		// // texto que se va a copiar
-		// console.log(input);
-		// // se selecciona lo que se va a copiar
-		// input.select();
-		// // se copia
-		// console.log(document.execCommand("copy"));
 	});
-	console.log(html)
+	// se crea un elemento textarea para que tenga el contenido a copiar, se agrega al html, se copia y luego se elimina para que no se vea en la pagina
+	const textarea = document.createElement("textarea");
+	textarea.value = html;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
 }
-
-// traer los 4 valores y crear un elemento textarea ponerlo dentro y luego usar el comando de copiar para que copie eso.
