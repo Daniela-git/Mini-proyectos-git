@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 :root{
-    --fondoCalculadora: #dfe6e9;
+    --fondoCalculadora: #0984e3;
+    --botones: #dfe6e9;
 }
 *{
     margin: 0px;
@@ -16,6 +17,7 @@ button{
     background-color: transparent;
     font-size: 1.5em;
     cursor: pointer;
+    color: var(--botones);
 }
 button:active{
     font-size: 1.8em;
@@ -49,7 +51,7 @@ button:active{
     background-color: white;
     margin: auto;
     border-radius: 5px;
-    padding: 4em;
+    padding: 2em;
     text-align: start;
 }
 
