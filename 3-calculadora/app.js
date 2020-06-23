@@ -5,6 +5,9 @@ let operadores = [];
 const numeros = document.querySelectorAll(".btn-num");
 const operaciones = document.querySelectorAll(".btn-operacion");
 const pantalla = document.querySelector(".pantalla");
+const ingreso = pantalla.querySelector(".ingreso");
+const operador = pantalla.querySelector(".operacion");
+
 const btnBorrar = document.querySelector(".borrar");
 const btnBorrarTodo = document.querySelector(".borrar-todo");
 
@@ -27,9 +30,7 @@ function mostrarNumero(e) {
 	e.preventDefault();
 	const valor = e.currentTarget.innerHTML;
 	// se toma lo que hay de momento en pantalla para agregarle los nuevos valores
-	const ingreso = pantalla.querySelector('.ingreso')
 	let numPantalla = ingreso.textContent;
-	console.log(numPantalla)
 	// miramos si hay más de 8 digitos
 	if (numPantalla.length < 8) {
 		ingreso.textContent = numPantalla + valor;
@@ -48,9 +49,11 @@ function mostrarNumero(e) {
 function borrarPantalla(e) {
 	e.preventDefault();
 	// sacamos lo que han digitado y la operacion,luego borramos lo que hay para que ingresen el nueo numero
-	const numero = Number(pantalla.textContent);
+
+	const numero = Number(ingreso.textContent);
 	const operacion = e.currentTarget.innerHTML;
-	pantalla.textContent = "";
+	ingreso.textContent = "";
+	operador.textContent = operacion;
 	// guardamos el nuemero y la operacion para poder calcularlo al final
 	entrada.push(numero);
 
@@ -81,7 +84,7 @@ function resultado() {
 				break;
 
 			default:
-				total = 0;
+				total = 'nan';
 				break;
 		}
 	}
@@ -90,16 +93,20 @@ function resultado() {
 	mostrarResultado(total);
 }
 function mostrarResultado(total) {
-	pantalla.textContent = total;
+	const resultado = pantalla.querySelector(".resultado");
+	resultado.textContent = total;
 }
 
 function borrar(e) {
 	e.preventDefault();
-	let enPantalla = pantalla.textContent;
-	pantalla.textContent = enPantalla.slice(0,enPantalla.length-1);
+	let enPantalla = ingreso.textContent;
+	ingreso.textContent = enPantalla.slice(0, enPantalla.length - 1);
 }
 
 function borrarTodo(e) {
 	e.preventDefault();
-	pantalla.textContent = "";
+	const resultado = pantalla.querySelector(".resultado");
+	ingreso.textContent = "";
+	operador.textContent = "";
+	resultado.textContent = "";
 }
