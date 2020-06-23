@@ -27,10 +27,12 @@ function mostrarNumero(e) {
 	e.preventDefault();
 	const valor = e.currentTarget.innerHTML;
 	// se toma lo que hay de momento en pantalla para agregarle los nuevos valores
-	let numPantalla = pantalla.textContent;
+	const ingreso = pantalla.querySelector('.ingreso')
+	let numPantalla = ingreso.textContent;
+	console.log(numPantalla)
 	// miramos si hay más de 8 digitos
 	if (numPantalla.length < 8) {
-		pantalla.textContent = numPantalla + valor;
+		ingreso.textContent = numPantalla + valor;
 	} else {
 		const container = document.querySelector(".container");
 		const contenido = document.querySelector(".contenido");
