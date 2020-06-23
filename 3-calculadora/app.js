@@ -1,10 +1,15 @@
 // variables
+// -----------------
 let entrada = [];
 let operadores = [];
 const numeros = document.querySelectorAll(".btn-num");
 const operaciones = document.querySelectorAll(".btn-operacion");
 const pantalla = document.querySelector(".pantalla");
+const btnBorrar = document.querySelector(".borrar");
+const btnBorrarTodo = document.querySelector(".borrar-todo");
+
 // evente listeners
+// -----------------
 numeros.forEach((numero) => {
 	numero.addEventListener("click", mostrarNumero);
 });
@@ -12,7 +17,12 @@ numeros.forEach((numero) => {
 operaciones.forEach((operacion) => {
 	operacion.addEventListener("click", borrarPantalla);
 });
+
+btnBorrar.addEventListener("click", borrar);
+btnBorrarTodo.addEventListener("click", borrarTodo);
+
 // funciones
+// -----------------
 function mostrarNumero(e) {
 	e.preventDefault();
 	const valor = e.currentTarget.innerHTML;
@@ -75,5 +85,19 @@ function resultado() {
 	}
 	entrada = [];
 	operadores = [];
-	console.log(total);
+	mostrarResultado(total);
+}
+function mostrarResultado(total) {
+	pantalla.textContent = total;
+}
+
+function borrar(e) {
+	e.preventDefault();
+	let enPantalla = pantalla.textContent;
+	pantalla.textContent = enPantalla.slice(0,enPantalla.length-1);
+}
+
+function borrarTodo(e) {
+	e.preventDefault();
+	pantalla.textContent = "";
 }
