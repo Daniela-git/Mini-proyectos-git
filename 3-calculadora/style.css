@@ -2,6 +2,7 @@
 :root{
     --fondoCalculadora: #0984e3;
     --botones: #dfe6e9;
+    --especiales: #fab1a0;
 }
 *{
     margin: 0px;
@@ -67,4 +68,9 @@ button:active{
     grid-area: operaciones;
     display: grid;
     gap: 0.5em;
+    color: var(--especiales);
+}
+
+button.btn-operacion, .borrar, .borrar-todo{
+    color: var(--especiales);
 }
