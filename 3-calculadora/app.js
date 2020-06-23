@@ -1,6 +1,6 @@
 // variables
-let entrada = []
-let operadores = []
+let entrada = [];
+let operadores = [];
 const numeros = document.querySelectorAll(".btn-num");
 const operaciones = document.querySelectorAll(".btn-operacion");
 const pantalla = document.querySelector(".pantalla");
@@ -34,49 +34,46 @@ function mostrarNumero(e) {
 }
 
 function borrarPantalla(e) {
-    e.preventDefault();
-    // sacamos lo que han digitado y la operacion,luego borramos lo que hay para que ingresen el nueo numero
-    const numero = Number(pantalla.textContent)
-    const operacion = e.currentTarget.innerHTML;
-    pantalla.textContent = ''
-    
-    // guardamos el nuemero y la operacion para poder calcularlo al final
-    entrada.push(numero)
+	e.preventDefault();
+	// sacamos lo que han digitado y la operacion,luego borramos lo que hay para que ingresen el nueo numero
+	const numero = Number(pantalla.textContent);
+	const operacion = e.currentTarget.innerHTML;
+	pantalla.textContent = "";
+	// guardamos el nuemero y la operacion para poder calcularlo al final
+	entrada.push(numero);
 
-    if (operacion === '=') {
-        let total = entrada[0]
-        for (let i = 0; i < operadores.length; i++) {
-            
-            switch (operadores[i]) {
-                case '+':
-                    total += entrada[i+1] 
-                    
-                    break;
-                case '-':
-                    total -= entrada[i+1] 
-                    
-                    break;
-                case '*':
-                    total = total * entrada[i+1] 
-                    break;
-                case '/':
-                    total = total / entrada[i+1] 
-                    break;
-            
-                default:
-                    total = 0
-                    break;
-            }
-            
-        }
-        entrada=[]
-        operadores=[]
-        console.log(total)
-    }else{
-        operadores.push(operacion)
+	if (operacion === "=") {
+		resultado();
+	} else {
+		operadores.push(operacion);
+	}
+}
 
-    }
-    
+function resultado() {
+	let total = entrada[0];
+	for (let i = 0; i < operadores.length; i++) {
+		switch (operadores[i]) {
+			case "+":
+				total += entrada[i + 1];
 
+				break;
+			case "-":
+				total -= entrada[i + 1];
 
+				break;
+			case "*":
+				total = total * entrada[i + 1];
+				break;
+			case "/":
+				total = total / entrada[i + 1];
+				break;
+
+			default:
+				total = 0;
+				break;
+		}
+	}
+	entrada = [];
+	operadores = [];
+	console.log(total);
 }
