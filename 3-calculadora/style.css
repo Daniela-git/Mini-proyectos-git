@@ -49,6 +49,8 @@ button:active{
     background-color: white;
     margin: auto;
     border-radius: 5px;
+    padding: 4em;
+    text-align: start;
 }
 
 .numeros{
