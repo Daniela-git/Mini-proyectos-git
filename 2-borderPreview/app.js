@@ -28,15 +28,33 @@ function leerEntrada(e) {
 
 function copiar(e) {
 	e.preventDefault();
-	let copia = "";
+	let html = ''
 	inputs.forEach((input) => {
-		// texto que se va a copiar
-		console.log(input);
-		// se selecciona lo que se va a copiar
-		input.select();
-		// se copia
-		console.log(document.execCommand("copy"));
+
+		const id = input.id
+		if (id === "left-top") {
+			html += `border-top-left-radius:${input.value}px;\n`
+		}	
+		else if (id === "left-bottom") {
+			html += `border-bottom-left-radius:${input.value}px;\n`
+		}
+		else if (id === "right-top") {
+			html += `border-top-right-radius:${input.value}px;\n`
+		}
+		else if (id === "right-bottom") {
+			html += `border-bottom-right-radius:${input.value}px;\n`
+		}
+
+
+
+		// // texto que se va a copiar
+		// console.log(input);
+		// // se selecciona lo que se va a copiar
+		// input.select();
+		// // se copia
+		// console.log(document.execCommand("copy"));
 	});
-	console.log(copia);
+	console.log(html)
 }
 
+// traer los 4 valores y crear un elemento textarea ponerlo dentro y luego usar el comando de copiar para que copie eso.
