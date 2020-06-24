@@ -2,21 +2,22 @@
 // ---------
 const btnInicio = document.querySelector(".btn");
 const luces = document.querySelectorAll(".luz");
+const tiempo = document.querySelector('#tiempo')
 let intervalo = 0
 let time = 1000
 // event listeners
 // ---------------
 btnInicio.addEventListener("click", inicio);
+tiempo.addEventListener('keyup',cambiarTiempo)
 // funciones
 // ---------
-function inicio(e){
-    e.preventDefault()
-    if(e.currentTarget.classList.contains('inicio')){
-        e.currentTarget.classList.remove('inicio')
+function inicio(){
+    if(btnInicio.classList.contains('inicio')){
+        btnInicio.classList.remove('inicio')
         intervalo = setInterval(restaurar, time);
     }else{
         clearInterval(intervalo)
-        e.currentTarget.classList.add('inicio')
+        btnInicio.classList.add('inicio')
     }
 
 }
@@ -30,6 +31,13 @@ function restaurar() {
         }
         
     }
+    
+}
+function cambiarTiempo(e){
+    time = e.currentTarget.value * 1000
+    clearInterval(intervalo)
+    btnInicio.classList.toggle('inicio')
+    inicio()
     
 }
 
