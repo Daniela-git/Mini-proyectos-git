@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.luz{
+    border: 1px solid black;
+    width: 1.875em;
+    height: 1.875em;
+    margin: 3px;
+    border-radius: 30px;
+}
+.luz:nth-child(odd){
+    background-color: rgb(197, 245, 125);
+}
+.luz:nth-child(even){
+    background-color: rgb(238, 135, 135);
+}
+.verde{
+    background-color: greenyellow;
+    
+    
+}
+.rojo{
+    background-color: red;
+
+}
