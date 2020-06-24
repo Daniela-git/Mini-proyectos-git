@@ -22,12 +22,10 @@
 .luz:nth-child(even){
     background-color: rgb(238, 135, 135);
 }
-.verde{
-    background-color: greenyellow;
-    
-    
+.luz.verde{
+    background-color: green;
 }
-.rojo{
+.luz.rojo{
     background-color: red;
 
 }
