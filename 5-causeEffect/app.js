@@ -109,3 +109,16 @@ const people = [
 
 const lista = document.querySelector('.lista')
 
+// event listeners
+document.addEventListener('DOMContentLoaded', cargarLista)
+
+// funciones
+function cargarLista(){
+    let html = ''
+    people.forEach((person)=>{
+        let fullName = person.name.split(' ')
+        html += `<li class='item-lista'>${fullName[0]}</li>`
+    })
+    lista.innerHTML = html
+}
+
