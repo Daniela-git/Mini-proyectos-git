@@ -9,7 +9,8 @@
 	box-sizing: border-box;
 }
 body {
-	font-family: "Oswald", sans-serif;
+    font-family: "Oswald", sans-serif;
+    background-color: white;
 }
 
 .container {
