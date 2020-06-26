@@ -31,13 +31,13 @@ btnControl.addEventListener("click", (e) => {
 function valorInicial() {
 	let hexa = inicial.value;
 	if(patron.test(hexa)){
-		const entrada = document.querySelector('.entrada')
+		const container = document.querySelector('.container')
 		const msj = document.createElement('h3')
 		msj.classList.add('mensaje')
 		msj.textContent = 'solo numeros y letras de la A-F'
-		entrada.appendChild(msj)
+		container.appendChild(msj)
 		setTimeout(()=>{
-			entrada.querySelector('.mensaje').remove()
+			container.querySelector('.mensaje').remove()
 		},2000)
 	}
 	else if (hexa.length === 6) {

@@ -44,6 +44,15 @@ input {
 label {
 	color: white;
 }
+.mensaje{
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 3px;
+    text-align: center;
+    text-decoration: none;
+    
+    
+}
 .color-base input {
 	width: 6em;
 	height: 2em;
