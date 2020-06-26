@@ -1,22 +1,35 @@
 // variables
 // ---------
 const inicial = document.querySelector("#inicial");
-const incremento = document.querySelector("#incremento");
+const incremento = document.querySelector(".incremento");
 const btnControl = document.querySelector(".btn-control");
 const cajaColor = document.querySelector(".color");
 
-let red = 0
-let green = 0
-let blue = 0
+let red = 0;
+let green = 0;
+let blue = 0;
 let intervalo = 0;
-let inc = parseInt(incremento.value)
+let inc = parseInt(incremento.value);
 // event listeners
 // ---------------
 
 btnControl.addEventListener("click", (e) => {
 	e.preventDefault();
 	if (btnControl.classList.contains("inicio")) {
+		btnControl.classList.remove("inicio");
+		btnControl.innerHTML = "Detener";
+		// para que no pueda cambiar el incremento ni el color base mientras esta en funcionamiento
+        incremento.disabled = true;
+        inicial.disabled = true;
+        // empieza la diversion
 		valorInicial();
+	} else {
+		clearInterval(intervalo);
+		btnControl.innerHTML = "Inicio";
+        btnControl.classList.add("inicio");
+		incremento.disabled = false;
+		inicial.disabled = false;
+        
 	}
 });
 // funciones
@@ -40,10 +53,8 @@ function valorInicial() {
 }
 
 function cambioColor() {
-    
 	red = red + inc;
 	green = green + inc;
 	blue = blue + inc;
-    console.log(red, green, blue)
 	cajaColor.style.backgroundColor = `rgb(${red},${green},${blue})`;
 }
