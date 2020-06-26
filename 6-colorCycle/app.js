@@ -12,20 +12,13 @@ let intervalo = 0;
 let incRed = parseInt(incremento[0].value);
 let incGreen = parseInt(incremento[1].value);
 let incBlue = parseInt(incremento[2].value);
+let patron = /[g-z\D]/i
 // event listeners
 // ---------------
 
 btnControl.addEventListener("click", (e) => {
 	e.preventDefault();
 	if (btnControl.classList.contains("inicio")) {
-		btnControl.classList.remove("inicio");
-		btnControl.innerHTML = "Detener";
-		// para que no pueda cambiar el incremento ni el color base mientras esta en funcionamiento
-		incremento[0].disabled = true;
-		incremento[1].disabled = true;
-		incremento[2].disabled = true;
-		inicial.disabled = true;
-		// empieza la diversion
 		valorInicial();
 	} else {
 		restart();
@@ -36,7 +29,24 @@ btnControl.addEventListener("click", (e) => {
 
 function valorInicial() {
 	let hexa = inicial.value;
-	if (hexa.length === 6) {
+	if(patron.test(hexa)){
+		const entrada = document.querySelector('.entrada')
+		const msj = document.createElement('h3')
+		msj.classList.add('mensaje')
+		msj.textContent = 'solo numeros y letras de la A-F'
+		entrada.appendChild(msj)
+		setTimeout(()=>{
+			entrada.querySelector('.mensaje').remove()
+		},2000)
+	}
+	else if (hexa.length === 6) {
+		btnControl.classList.remove("inicio");
+		btnControl.innerHTML = "Detener";
+		// para que no pueda cambiar el incremento ni el color base mientras esta en funcionamiento
+		incremento[0].disabled = true;
+		incremento[1].disabled = true;
+		incremento[2].disabled = true;
+		inicial.disabled = true;
 		// se sacan los numeros en hexadecimal para cada color
 		red = hexa.slice(0, 2);
 		green = hexa.slice(2, 4);
