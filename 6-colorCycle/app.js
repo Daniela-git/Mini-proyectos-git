@@ -3,7 +3,7 @@
 const inicial = document.querySelector("#inicial");
 const incremento = document.querySelectorAll(".incremento");
 const btnControl = document.querySelector(".btn-control");
-const cajaColor = document.querySelector(".color");
+const body = document.querySelector('body')
 
 let red = 0;
 let green = 0;
@@ -57,7 +57,7 @@ function valorInicial() {
 		green = parseInt(green, 16);
 		blue = parseInt(blue, 16);
 		// se pone la caja del color base
-		cajaColor.style.backgroundColor = `rgb(${red},${green},${blue})`;
+		body.style.backgroundColor = `rgb(${red},${green},${blue})`;
 		intervalo = setInterval(cambioColor, 250);
 	}
 }
@@ -66,11 +66,11 @@ function cambioColor() {
 	red = red + incRed;
 	green = green + incGreen;
 	blue = blue + incBlue;
-
-	if (red === 255 && green === 255 && blue === 255) {
+	
+	if (red >= 255 && green >= 255 && blue >= 255) {
 		restart();
 	}
-	cajaColor.style.backgroundColor = `rgb(${red},${green},${blue})`;
+	body.style.backgroundColor = `rgb(${red},${green},${blue})`;
 }
 
 function restart() {
