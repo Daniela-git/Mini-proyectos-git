@@ -19,17 +19,12 @@ btnControl.addEventListener("click", (e) => {
 		btnControl.classList.remove("inicio");
 		btnControl.innerHTML = "Detener";
 		// para que no pueda cambiar el incremento ni el color base mientras esta en funcionamiento
-        incremento.disabled = true;
-        inicial.disabled = true;
-        // empieza la diversion
+		incremento.disabled = true;
+		inicial.disabled = true;
+		// empieza la diversion
 		valorInicial();
 	} else {
-		clearInterval(intervalo);
-		btnControl.innerHTML = "Inicio";
-        btnControl.classList.add("inicio");
-		incremento.disabled = false;
-		inicial.disabled = false;
-        
+		restart();
 	}
 });
 // funciones
@@ -56,5 +51,17 @@ function cambioColor() {
 	red = red + inc;
 	green = green + inc;
 	blue = blue + inc;
+
+	if ((red === 255) && (green === 255) && (blue === 255)) {
+		restart()
+	}
 	cajaColor.style.backgroundColor = `rgb(${red},${green},${blue})`;
+}
+
+function restart() {
+	clearInterval(intervalo);
+	btnControl.innerHTML = "Inicio";
+	btnControl.classList.add("inicio");
+	incremento.disabled = false;
+	inicial.disabled = false;
 }
