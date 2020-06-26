@@ -9,21 +9,53 @@
 	<body>
 		<div class="container">
 			<div class="entrada">
-                <h3>color base</h3>
-				<label for="">#</label>
-                <input type="text" name="" maxlength="6" id='inicial' class="input" />
-                <h3>incremento</h3>
-                <label for="">rojo</label>
-                <input type="number" name="" id="incRed" class="input incremento" value="1">
-                <label for="">verde</label>
-                <input type="number" name="" id="incGreen" class="input incremento" value="1">
-                <label for="">azul</label>
-                <input type="number" name="" id="incBlue" class="input incremento" value="1">
-            </div>
-            <button class="btn-control inicio">Inicio</button>
+				<div class="color-base">
+					<h3>color base:</h3>
+					<label for="">#</label>
+					<input
+						type="text"
+						name=""
+						maxlength="6"
+						id="inicial"
+						class="input"
+					/>
+				</div>
+				<!--color base-->
+				<div class="incrementos">
+					<h3>incrementos:</h3>
+					<label for="">rojo</label>
+					<input
+						type="number"
+						name=""
+						id="incRed"
+						class="input incremento"
+						value="1"
+					/>
+					<label for="">verde</label>
+					<input
+						type="number"
+						name=""
+						id="incGreen"
+						class="input incremento"
+						value="1"
+					/>
+					<label for="">azul</label>
+					<input
+						type="number"
+						name=""
+						id="incBlue"
+						class="input incremento"
+						value="1"
+					/>
+				</div>
+				<!--incrementos-->
+                <button class="btn-control inicio">Inicio</button>
+			</div>
+			<!--entrada-->
             <div class="color"></div>
-            
 		</div>
+		<!--container-->
+
 		<script src="app.js"></script>
 	</body>
 </html>

@@ -12,6 +12,7 @@ let intervalo = 0;
 let incRed = parseInt(incremento[0].value);
 let incGreen = parseInt(incremento[1].value);
 let incBlue = parseInt(incremento[2].value);
+// patron que verifica si hay letras de la g-z y cualquier cosa que no es un digito. la i es para que no importe si es mayu o no
 let patron = /[g-z\D]/i
 // event listeners
 // ---------------
