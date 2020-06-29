@@ -1,64 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
-body{
-    font-family: 'Nova Square', cursive;
-    font-size: 16px;
+body {
+	font-family: "Nova Square", cursive;
+	font-size: 16px;
 }
 
-.container{
-    width: 90%;
-    margin: auto;
+.container {
+	width: 90%;
+	margin: auto;
 }
-.contenido{
-    display: flex;
-    margin-top: 2em;
+.contenido {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	margin-top: 4em;
 }
+
 /*------------------
     entrada
 -------------------*/
-.entrada{
-    margin-right: 4em;
+.entrada {
+	margin-right: 2em;
+	margin-left: 4em;
 }
-label{
-    font-size: 1.5em;
-    text-transform: capitalize;
+label {
+	font-size: 1.5em;
+	text-transform: capitalize;
     display: block;
+    margin-bottom: .5em;
 }
-input{
-    width: 10em;
-    height: 2em;
-    padding: .5em;
-    text-align: center;
-    border-radius: 3px;
-    border: 1px solid black;
+input {
+	width: 10em;
+	height: 2em;
+	padding: 0.5em;
+	text-align: center;
+	border-radius: 3px;
+	border: 1px solid black;
 }
-.nombre, .tiempo, .fecha{
-    margin-bottom: 1em ;
+.nombre,
+.tiempo,
+.fecha {
+	margin-bottom: 1em;
 }
 
-.btn-inicio{
-    border: 2px solid black;
-    border-radius: 4px;
-    background-color: transparent;
-    width: 10em;
-    height: 2em;
-    margin-top: 2em;
+.btn-inicio {
+	border: 2px solid black;
+	border-radius: 4px;
+	background-color: transparent;
+	width: 10em;
+	height: 2em;
+	margin-top: 2em;
 }
 
 /*------------------
     contador
 -------------------*/
 
-.contador{
-    display: grid;
+.contador {
+	display: grid;
     place-items: center;
+    row-gap: 1em;
 }
-.contador div{
-    border: 1px solid black ;
-    width: 20em;
+.mes-dia,
+.hora-larga {
+	width: 100%;
+}
+
+.mes-dia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "mes dia";
+    place-items: center;
+    column-gap: 2.5em;
+}
+.mes, .dia{
+    text-transform: uppercase;
+    padding: 1em;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+
+}
+.mes{
+    grid-area: mes;
+    justify-self: end;
+}
+.dia{
+    grid-area: dia;
+    justify-self: start;
+}
+
+.numero{
+    font-size: 6em;
+}
+
+.hora-larga{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "hora min seg";
+    place-items: center;
+    column-gap: 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hora , .minutos, .segundos{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1em;
+    width: 80%;
+
+}
+.hora{
+    grid-area: hora;
+    justify-self: end;
+}
+.minutos{
+    grid-area: min;
+}
+.segundos{
+    grid-area: seg;
+    justify-self: start;
 }
