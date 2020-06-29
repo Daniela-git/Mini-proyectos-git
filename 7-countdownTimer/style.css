@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nova Square', cursive;
+    font-size: 16px;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+.contenido{
+    display: flex;
+    margin-top: 2em;
+}
+/*------------------
+    entrada
+-------------------*/
+.entrada{
+    margin-right: 4em;
+}
+label{
+    font-size: 1.5em;
+    text-transform: capitalize;
+    display: block;
+}
+input{
+    width: 10em;
+    height: 2em;
+    padding: .5em;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+.nombre, .tiempo, .fecha{
+    margin-bottom: 1em ;
+}
+
+.btn-inicio{
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: transparent;
+    width: 10em;
+    height: 2em;
+    margin-top: 2em;
+}
+
+/*------------------
+    contador
+-------------------*/
+
+.contador{
+    display: grid;
+    place-items: center;
+}
+.contador div{
+    border: 1px solid black ;
+    width: 20em;
+}
