@@ -32,3 +32,26 @@ function iniciarContador(fecha, hora) {
 	// año mes dia = fecha
 	console.log(hora);
 }
+
+
+function restaSeg(){
+    segundos --
+    if(segundos === 0){
+        segundos = 60
+        restaMin()
+    }
+}
+function restaMin(){
+    minutos --
+    if(minutos === 0){
+        minutos = 60
+        restaDias()
+    }
+}
+function restaDias(){
+    dias --
+    if(dias === 0){
+        clearInterval(intervaloSeg)
+    }
+}
+
