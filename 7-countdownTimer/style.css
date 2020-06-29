@@ -17,7 +17,8 @@ body {
 .contenido {
 	display: grid;
 	grid-template-columns: 1fr 3fr;
-	margin-top: 4em;
+    margin-top: 4em;
+    place-items: center;
 }
 
 /*------------------
@@ -61,11 +62,29 @@ input {
 -------------------*/
 
 .contador {
-	display: grid;
-    place-items: center;
-    row-gap: 1em;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* place-items: center; */
+    gap: 1em;
 }
-.mes-dia,
+
+.dia, .hora, .minutos, .segundos{
+    /* border: 2px solid; */
+    border-left: 2px solid black;
+    text-align: center;
+    height: 10em;
+}
+.segundos{
+    border-right: 2px solid black;
+}
+.titulo{
+    text-transform: capitalize;
+}
+.numero{
+    font-size: 6em;
+}
+/* .mes-dia,
 .hora-larga {
 	width: 100%;
 }
@@ -126,4 +145,4 @@ input {
 .segundos{
     grid-area: seg;
     justify-self: start;
-}
+} */
