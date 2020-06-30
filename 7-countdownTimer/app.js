@@ -30,38 +30,57 @@ function obtenerDatos(e) {
 }
 
 function iniciarContador(fecha, hora) {
-    // año mes dia = fecha
-    // creamos un objeto tipo fecha con la fecha que nos pasa el usuario
-    fecha = new Date(fecha)
-    let hoy = new Date()
-    // con esto pasamos las fechas a millisegundos para poder restarlo
-    let rest = fecha.getTime() - hoy.getTime()
+	// año mes dia = fecha
+	// creamos un objeto tipo fecha con la fecha que nos pasa el usuario
+	fecha = new Date(fecha);
+	let hoy = new Date();
+	// con esto pasamos las fechas a millisegundos para poder restarlo
+	let rest = fecha.getTime() - hoy.getTime();
 
-    //para saber los dias se divide por 1000 que son los millisegundos, 60 los segundos, 60  los minutos y 24 de los dias
-    // para pasar a millisegundos en vez de dividir se multiplica
-    dias = Math.floor(rest /1000/60/60/24)
-	console.log(diasRestantes);
+	//para saber los dias se divide por 1000 que son los millisegundos, 60 los segundos, 60  los minutos y 24 de los dias
+	// para pasar a millisegundos en vez de dividir se multiplica
+	dias = Math.floor(rest / 1000 / 60 / 60 / 24);
+	segundos = 60 - hoy.getSeconds();
+	minutos = 60 - hoy.getMinutes();
+    horas = 24 - hoy.getHours();
+    
+    numeros[0].textContent = dias
+    numeros[1].textContent = horas
+    numeros[2].textContent = minutos
+    numeros[3].textContent = segundos
+
+    intervaloSeg = setInterval(restaSeg, 1000);
 }
 
-
-function restaSeg(){
-    segundos --
-    if(segundos === 0){
-        segundos = 60
-        restaMin()
-    }
+function restaSeg() {
+    segundos--;
+    numeros[3].textContent = segundos
+	if (segundos === 0) {
+		segundos = 60;
+		restaMin();
+	}
 }
-function restaMin(){
-    minutos --
-    if(minutos === 0){
-        minutos = 60
-        restaDias()
-    }
-}
-function restaDias(){
-    dias --
-    if(dias === 0){
-        clearInterval(intervaloSeg)
-    }
+function restaMin() {
+    minutos--;
+    numeros[2].textContent = minutos
+	if (minutos === 0) {
+		minutos = 60;
+		restaHoras();
+	}
 }
 
+function restaHoras() {
+    horas--;
+    numeros[1].textContent = horas
+	if (horas === 0) {
+		horas = 24;
+		restaDias();
+	}
+}
+function restaDias() {
+    dias--;
+    numeros[0].textContent = dias
+	if (dias === 0) {
+		clearInterval(intervaloSeg);
+	}
+}
