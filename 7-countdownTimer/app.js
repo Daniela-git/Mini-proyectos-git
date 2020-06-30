@@ -21,16 +21,26 @@ datos.addEventListener("submit", obtenerDatos);
 function obtenerDatos(e) {
 	e.preventDefault();
 	//tomamos lo que necesitamos del form
-	let fecha = e.target.children[1].children[1].value;
-	let hora = e.target.children[2].children[1].value;
-	fecha = fecha.split("-");
-	hora = hora.split(":");
+	// let fecha = e.target.children[0].children[0].value;
+	let fecha = e.target.children[0].children[1].value;
+	let hora = e.target.children[1].children[1].value;
+	// fecha = fecha.split("-");
+	// hora = hora.split(":");
 	iniciarContador(fecha, hora);
 }
 
 function iniciarContador(fecha, hora) {
-	// año mes dia = fecha
-	console.log(hora);
+    // año mes dia = fecha
+    // creamos un objeto tipo fecha con la fecha que nos pasa el usuario
+    fecha = new Date(fecha)
+    let hoy = new Date()
+    // con esto pasamos las fechas a millisegundos para poder restarlo
+    let rest = fecha.getTime() - hoy.getTime()
+
+    //para saber los dias se divide por 1000 que son los millisegundos, 60 los segundos, 60  los minutos y 24 de los dias
+    // para pasar a millisegundos en vez de dividir se multiplica
+    dias = Math.floor(rest /1000/60/60/24)
+	console.log(diasRestantes);
 }
 
 
