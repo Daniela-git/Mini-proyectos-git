@@ -11,6 +11,8 @@ let segundos = 0;
 let minutos = 0;
 let horas = 0;
 let dias = 0;
+let horaExtra = 0;
+let minutosExtra = 0;
 //creo que para cambiar el mes voy a tener que contar cuantos días han pasado dependíendo del mes actual
 let meses = 0; // maximo 6 meses
 
@@ -24,8 +26,7 @@ function obtenerDatos(e) {
 	// let fecha = e.target.children[0].children[0].value;
 	let fecha = e.target.children[0].children[1].value;
 	let hora = e.target.children[1].children[1].value;
-	// fecha = fecha.split("-");
-	// hora = hora.split(":");
+	hora = hora.split(":");
 	iniciarContador(fecha, hora);
 }
 
@@ -36,51 +37,60 @@ function iniciarContador(fecha, hora) {
 	let hoy = new Date();
 	// con esto pasamos las fechas a millisegundos para poder restarlo
 	let rest = fecha.getTime() - hoy.getTime();
-
 	//para saber los dias se divide por 1000 que son los millisegundos, 60 los segundos, 60  los minutos y 24 de los dias
 	// para pasar a millisegundos en vez de dividir se multiplica
 	dias = Math.floor(rest / 1000 / 60 / 60 / 24);
 	segundos = 60 - hoy.getSeconds();
 	minutos = 60 - hoy.getMinutes();
-    horas = 24 - hoy.getHours();
-    
-    numeros[0].textContent = dias
-    numeros[1].textContent = horas
-    numeros[2].textContent = minutos
-    numeros[3].textContent = segundos
+	horas = 24 - hoy.getHours();
+	horaExtra = hora[0];
+	minutosExtra = hora[1];
+	horaExtra = hora[0];
+	minutosExtra = hora[1];
+	if (dias < 0) {
+		dias = 0;
+		horas = Math.abs(horaExtra - hoy.getHours());
+	}
+	numeros[0].textContent = dias;
+	numeros[1].textContent = horas;
+	numeros[2].textContent = minutos;
+	numeros[3].textContent = segundos;
 
-    intervaloSeg = setInterval(restaSeg, 1000);
+	intervaloSeg = setInterval(restaSeg, 1000);
 }
 
 function restaSeg() {
-    segundos--;
-    numeros[3].textContent = segundos
-	if (segundos === 0) {
+	segundos--;
+	numeros[3].textContent = segundos;
+	if (segundos === 0 && minutos === 0 && horas === 0 && dias === 0) {
+		clearInterval(intervaloSeg);
+	} else if (segundos === 0) {
 		segundos = 60;
 		restaMin();
 	}
 }
 function restaMin() {
-    minutos--;
-    numeros[2].textContent = minutos
-	if (minutos === 0) {
+	minutos--;
+	numeros[2].textContent = minutos;
+	if (minutos === 0 && horas !== 0) {
 		minutos = 60;
 		restaHoras();
 	}
 }
 
 function restaHoras() {
-    horas--;
-    numeros[1].textContent = horas
-	if (horas === 0) {
+	horas--;
+	numeros[1].textContent = horas;
+	if (horas === 0 && dias !== 0) {
 		horas = 24;
 		restaDias();
 	}
 }
 function restaDias() {
-    dias--;
-    numeros[0].textContent = dias
-	if (dias === 0) {
-		clearInterval(intervaloSeg);
+	dias--;
+	numeros[0].textContent = dias;
+	if (dias === 0 && (horaExtra !== 0 || minutosExtra !== 0)) {
+		horas = horaExtra;
+		minutos = minutosExtra;
 	}
 }

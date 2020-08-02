@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jason2csv</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <textarea name="" id="cuerpo" cols="30" rows="10"></textarea>
-    <script src="app.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>jason2csv</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<form action="#">
+			<label for="json">Json</label>
+			<textarea name="" id="json" cols="30" rows="10">
+				[{ "name":"John", "age":30, "city":"New York"}]</textarea
+			>
+			<label for="csv">CSV</label>
+			<textarea name="" id="csv" cols="30" rows="10"></textarea>
+
+			<button type="submit" id="convert">Convert</button>
+		</form>
+		<script src="app.js"></script>
+	</body>
 </html>
