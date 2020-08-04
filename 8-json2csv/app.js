@@ -30,5 +30,4 @@ function toCSV(obj) {
 		html += linea + "\n";
 	}
 	csv.innerHTML = html;
-	// console.log(html)
 }
