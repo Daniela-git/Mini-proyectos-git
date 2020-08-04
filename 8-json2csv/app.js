@@ -1,6 +1,7 @@
 const json = document.querySelector("#json");
 const csv = document.querySelector("#csv");
 const button = document.querySelector("#convert");
+const msj = document.querySelector(".msj");
 
 button.addEventListener("click", readJson);
 
@@ -11,7 +12,9 @@ function readJson(e) {
 		const obj = JSON.parse(json.value);
 		toCSV(obj);
 	} catch (error) {
-		console.log("ingrese un json valido");
+		msj.textContent = "Ingrese un json valido";
+		setTimeout(() => (msj.innerHTML = ""), 1000);
+		// console.log("hola");
 	}
 }
 function toCSV(obj) {
