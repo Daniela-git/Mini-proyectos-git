@@ -1,6 +1,49 @@
-*{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Langar&family=Lato:wght@100&display=swap");
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
+body {
+	font-size: 12px;
+	background-color: #fff8f0;
+	background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4d06f' fill-opacity='0.48'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.input {
+	width: 50%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+}
+.input h1 {
+	font-family: "Langar", cursive;
+	font-size: 4em;
+	margin-bottom: 1em;
+}
+.input label,
+.input input,.input button {
+	font-family: "Lato", sans-serif;
+	font-weight: bold;
+}
+.input label {
+	font-size: 2em;
+	margin-bottom: 0.25rem;
+}
+.input input {
+	border-radius: 0.25rem;
+	height: 2.5em;
+	padding: 6px;
+  font-size: 1.5em;
+  background-color:#FFF8F0;
+  margin-bottom: 0.625rem;
+}
+.input button{
+  border-radius: 0.25rem;
+  height: 2em;
+  width: 6em;
+  background-color: #f4d06f;
+  font-size: 1.5em;
+  font-weight: 600;
 
+}
