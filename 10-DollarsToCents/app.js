@@ -32,26 +32,17 @@ function toCoins(dollar) {
 	};
   list.reduce(reducer, dollar);
   showResults(dic)
-  
 }
 
 function showResults(dic){
 	let results = document.querySelector(".results");
-	while (results.firstChild) {
-		results.removeChild(results.firstChild);
-	}
+	let html = ''
   for(const[key, coin] of Object.entries(dic)) {
-    let divResult = document.createElement("div")
-    let title = document.createElement("h3")
-    let quantity = document.createElement("h4")
-    title.innerText = coin.name
-    quantity.innerText = coin.number
-    divResult.appendChild(title)
-    divResult.appendChild(quantity)
-    divResult.classList.add("result")
-    title.classList.add("title_result")
-    quantity.classList.add("quantity_result")
-    results.appendChild(divResult)
+		html += `
+		<div class="result">
+		<h3>${coin.name}</h3>
+		<h4>${coin.number}</h4>
+		</div>`
   }
-
+	results.innerHTML = html
 }
