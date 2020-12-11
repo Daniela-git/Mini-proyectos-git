@@ -16,10 +16,10 @@ function readData(e) {
 
 function toCoins(dollar) {
 	let dic = {
-		1: { name: "penny 1¢", number: 0 },
-		5: { name: "nickel 5¢", number: 0 },
-		10: { name: "dime 10¢", number: 0 },
-		25: { name: "quarter 25¢", number: 0 },
+		1: { name: "penny (1¢)", number: 0 },
+		5: { name: "nickel (5¢)", number: 0 },
+		10: { name: "dime (10¢)", number: 0 },
+		25: { name: "quarter (25¢)", number: 0 },
 	};
 	let list = [25, 10, 5, 1];
 	const reducer = (acc, curr) => {

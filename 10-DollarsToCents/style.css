@@ -22,9 +22,10 @@ body {
 	margin-bottom: 1em;
 }
 .input label,
-.input input,.input button {
+.input input,
+.input button {
 	font-family: "Lato", sans-serif;
-	font-weight: bold;
+	font-weight: bolder;
 }
 .input label {
 	font-size: 2em;
@@ -34,16 +35,38 @@ body {
 	border-radius: 0.25rem;
 	height: 2.5em;
 	padding: 6px;
-  font-size: 1.5em;
-  background-color:#FFF8F0;
-  margin-bottom: 0.625rem;
+	font-size: 1.5em;
+	background-color: #fff8f0;
+	margin-bottom: 0.625rem;
 }
-.input button{
-  border-radius: 0.25rem;
-  height: 2em;
-  width: 6em;
-  background-color: #f4d06f;
-  font-size: 1.5em;
-  font-weight: 600;
+.input button {
+	border-radius: 0.25rem;
+	height: 2em;
+	width: 6em;
+	background-color: #f4d06f;
+	font-size: 1.5em;
+	font-weight: 600;
+}
 
+.results {
+	width: 55%;
+	margin: auto;
+	margin-top: 5em;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(4, 1fr);
+}
+.result{
+  display:grid;
+  place-items: center;
+}
+.result h3 {
+	font-family: "Langar", cursive;
+  font-size: 2.3em;
+  text-transform: capitalize;
+}
+
+.result h4 {
+	font-family: "Langar", cursive;
+	font-size: 1.8em;
 }
