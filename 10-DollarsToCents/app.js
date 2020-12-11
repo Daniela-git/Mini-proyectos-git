@@ -36,7 +36,10 @@ function toCoins(dollar) {
 }
 
 function showResults(dic){
-  let results = document.querySelector(".results");
+	let results = document.querySelector(".results");
+	while (results.firstChild) {
+		results.removeChild(results.firstChild);
+	}
   for(const[key, coin] of Object.entries(dic)) {
     let divResult = document.createElement("div")
     let title = document.createElement("h3")
