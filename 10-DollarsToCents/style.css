@@ -39,6 +39,9 @@ body {
 	background-color: #fff8f0;
 	margin-bottom: 0.625rem;
 }
+.input input:focus{
+  background-color: white;
+} 
 .input button {
 	border-radius: 0.25rem;
 	height: 2em;
@@ -47,7 +50,10 @@ body {
 	font-size: 1.5em;
 	font-weight: 600;
 }
-
+.input button:hover{
+  background-color: #fff8f0;
+  cursor: pointer;
+}
 .results {
 	width: 55%;
 	margin: auto;
