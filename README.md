@@ -21,3 +21,5 @@ Grupo de mini proyectos para practicar javascript. Las ideas surgieron del sigui
 
 [Dollar to Cents](https://daniela-git.github.io/Mini-proyectos-git/10-DollarsToCents)
 
+[Dynamic Css Variables](https://daniela-git.github.io/Mini-proyectos-git/11-DynamicCssVariables/)
+
